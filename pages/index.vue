@@ -1,5 +1,10 @@
 <script setup>
 // const { count, addCount } = useAddCount();
+import { xssParse } from '~/lib/filterXss';
+
+const { t } = useI18n();
+const content = computed(() => xssParse(t('message')));
+
 const allStore = useAllStore();
 const { count, addCount } = toRefs(allStore);
 

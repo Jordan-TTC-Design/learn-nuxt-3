@@ -6,20 +6,27 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lang": "node GoogleSheetToJson.js"
   },
   "overrides": {
     "vue": "latest"
   },
   "devDependencies": {
     "@types/node": "^18",
-    "nuxt": "^3.4.3"
+    "flat": "^5.0.2",
+    "fs-extra": "^11.1.1",
+    "nuxt": "^3.4.3",
+    "spreadsheet-to-json": "^2.0.0"
   },
   "dependencies": {
+    "@nuxtjs/i18n": "8.0.0-beta.10",
     "@pinia/nuxt": "^0.4.9",
     "@popperjs/core": "^2.11.7",
     "dayjs": "^1.11.7",
+    "mongoose": "^7.2.3",
     "pinia": "^2.0.35",
-    "v-calendar": "^3.0.3"
+    "v-calendar": "^3.0.3",
+    "xss": "^1.0.14"
   }
 }

@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+const config = {
   app: {
     head: {
       viewport: 'width=500, initial-scale=1',
@@ -41,6 +41,7 @@ export default defineNuxtConfig({
         autoImports: ['defineStore', 'acceptHMRUpdate'],
       },
     ],
+    '@nuxtjs/i18n',
   ],
   runtimeConfig: {
     token: '',
@@ -48,4 +49,46 @@ export default defineNuxtConfig({
       apiUrl: '',
     },
   },
-});
+  // devServer: {
+  //   https: {
+  //     key: './https/localhost-key.pem',
+  //     cert: './https/localhost.pem',
+  //   },
+  // },
+  vite: {
+    server: {
+      proxy: {},
+    },
+  },
+  i18n: {
+    locales: [
+      {
+        code: 'zh-TW',
+        file: 'zh-TW.json',
+      },
+      {
+        code: 'en-US',
+        file: 'en-US.json',
+      },
+    ],
+    langDir: 'language',
+    defaultLocale: 'zh-TW',
+    detectBrowserLanguage: {
+      useCookie: true,
+    },
+  },
+  nitro: {
+    plugins: ['~/server/db/index.js'],
+  },
+};
+
+// if (process.env.NODE_ENV === 'development') {
+//   config.vite.server.proxy = {
+//     '/VsWeb/api': {
+//       target: 'https://www.vscinemas.com.tw/',
+//       changeOrigin: true,
+//     },
+//   };
+// }
+
+export default defineNuxtConfig(config);
