@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-const { count, addCount } = useAddCount();
 // useHead({
 //   title: '關於我們 About - Nuxt3 高效入門全攻略',
 //   meta: [
@@ -26,7 +25,6 @@ useSeoMeta({
   <AboutHeader></AboutHeader>
   <div>Page: about</div>
   <p>{{ count }}</p>
-  <button @click="addCount">+1</button>
   <AboutFooter></AboutFooter>
 </template>
 

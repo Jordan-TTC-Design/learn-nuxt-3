@@ -1,12 +1,8 @@
 <script setup>
-// const { count, addCount } = useAddCount();
 import { xssParse } from '~/lib/filterXss';
 
 const { t } = useI18n();
 const content = computed(() => xssParse(t('message')));
-
-const allStore = useAllStore();
-const { count, addCount } = toRefs(allStore);
 
 const route = useRoute();
 const router = useRouter();
@@ -17,7 +13,6 @@ console.log('router=>', router);
 <template>
   <div>Page: index</div>
   <p>{{ count }}</p>
-  <button @click="addCount">+1</button>
   <nuxt-link to="test">test</nuxt-link>
   <ClientOnly>
     <h1>
